@@ -22,14 +22,14 @@ export class FormsManualComponent implements OnInit {
   constructor(private formgroup2Builder: FormBuilder, private http: HttpClient) {
     this.FormsGroup2()
 
-    this.http.get<any>('https://e8f51ea6.ngrok.io/card-data').subscribe(result => {
-      //age
+    this.http.get<any>('https://97f8456b.ngrok.io/card-data').subscribe(result => {
+      //age revrere
       let year = result.birthday.substring(0, 4) - 543
       let daymonth = result.birthday.substring(5, 10)
       let sumyear = daymonth + "/" + year
       this.years = moment().diff(sumyear, 'years');
       console.log(this.years)
-      //age
+      //age revrere
 
       //formvalue
       this.DataFormIDcard = result;
@@ -37,7 +37,7 @@ export class FormsManualComponent implements OnInit {
         prefix: result.prefix,
         firstName: result.firstname,
         lastName: result.lastname,
-        birthday:this.years,
+        birthday: this.years,
         idCardNo: result.idCardNo,
         houseNo: result.houseNo,
 
@@ -51,6 +51,11 @@ export class FormsManualComponent implements OnInit {
 
 
   }
+  ngDoCheck(){
+    
+  }
+
+
 
   ngOnInit(): void {
   }

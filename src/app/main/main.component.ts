@@ -12,6 +12,9 @@ export class MainComponent implements OnInit {
 
 
   }
+  refresh(){
+    window.location.reload();
+  }
   print(){
 
     window.print()

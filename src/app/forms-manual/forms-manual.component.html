@@ -1,7 +1,7 @@
 <div class="container formdiv" >
     
     <div style="text-align: center;padding-left: 100px; ">
-        <p>สำนักงานตำรวจแห่งชาติ1<p>
+        <p>สำนักงานตำรวจแห่งชาติ<p>
     </div>
     <div style="text-align: center;padding-left: 100px;">
         <p>รายงานประจำวันรับแจ้งเป็นหลักฐาน<p>
@@ -36,13 +36,13 @@
                     ข้าพเจ้า
                 </div>
                 <div class="col-3" style="text-align: center;">
-                    <input type="text" class="form-control"  formControlName="prefix" [value]="this.DataFormIDcard?.prefix" >
+                    <input type="text" class="form-control"  formControlName="prefix" [value]="this.DataFormIDcard?.prefix" disabled >
                 </div>
                 <div class="col-3">
-                    <input type="text" class="form-control"  formControlName="firstName"  [value]="this.DataFormIDcard?.firstname">
+                    <input type="text" class="form-control"  formControlName="firstName"  [value]="this.DataFormIDcard?.firstname" disabled>
                 </div>
                 <div class="col-3">
-                    <input type="text" class="form-control"  formControlName="lastName" [value]="this.DataFormIDcard?.lastname">
+                    <input type="text" class="form-control"  formControlName="lastName" [value]="this.DataFormIDcard?.lastname" disabled>
                 </div>
 
 
@@ -58,7 +58,7 @@
                     หมายเลขบัตรประชาชน
                 </div>
                 <div class="col-3">
-                    <input type="text" class="form-control"  formControlName="idCardNo" [value]="this.DataFormIDcard?.idCardNo" >
+                    <input type="text" class="form-control"  formControlName="idCardNo" [value]="this.DataFormIDcard?.idCardNo" disabled>
                 </div>
             </div><br>
             <div class="row">
@@ -66,7 +66,7 @@
                     อยู่บ้านเลขที่
                 </div>
                 <div class="col-3">
-                    <input type="text" class="form-control"  formControlName="houseNo" [value]="this.DataFormIDcard?.houseNo"  >
+                    <input type="text" class="form-control"  formControlName="houseNo" [value]="this.DataFormIDcard?.houseNo" disabled  >
                 </div>
                 <div class="col-3" style="text-align: center; padding-left: 90px;">
                     ตรอก/ซอย
@@ -88,7 +88,7 @@
                     ตำบล
                 </div>
                 <div class="col-3">
-                    <input type="text" class="form-control"  formControlName="subArea" [value]="this.DataFormIDcard?.subArea" >
+                    <input type="text" class="form-control"  formControlName="subArea" [value]="this.DataFormIDcard?.subArea" disabled >
                 </div>
             </div><br>
             <div class="row">
@@ -97,13 +97,13 @@
                     อำเภอ
                 </div>
                 <div class="col-3">
-                    <input type="text" class="form-control"  formControlName="area"  [value]="this.DataFormIDcard?.area" > 
+                    <input type="text" class="form-control"  formControlName="area"  [value]="this.DataFormIDcard?.area" disabled > 
                 </div>
                 <div class="col-3" style="text-align: center; padding-left: 90px;">
                     จังหวัด
                 </div>
                 <div class="col-3">
-                    <input type="text" class="form-control"  formControlName="province" [value]="this.DataFormIDcard?.province" >
+                    <input type="text" class="form-control"  formControlName="province" [value]="this.DataFormIDcard?.province" disabled >
                 </div>
             </div><br>
             <div class="row">
@@ -173,7 +173,7 @@
                     </div>
                     <div class="col-3" style="text-align: center;">
                     
-                        <input type="text" class="form-control"  formControlName="prefix"   >
+                        <input type="text" class="form-control"  formControlName="prefix" >
                     </div>
                     <div class="col-3">
                         <input type="text" class="form-control" formControlName="firstName" >
