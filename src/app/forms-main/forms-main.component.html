@@ -1,0 +1,454 @@
+<!-- <button printSectionId="print-section" ngxPrint>print</button> -->
+
+  
+
+
+<div class="container formdiv">
+    <div style="text-align: center;padding-left: 100px; ">
+        <h1>คู่ฉบับ</h1>
+    </div>
+    <div style="text-align: center;padding-left: 100px; ">
+        <p>สำนักงานตำรวจแห่งชาติ1<p>
+    </div>
+    <div style="text-align: center;padding-left: 100px;">
+        <p>รายงานประจำวันรับแจ้งเป็นหลักฐาน<p>
+    </div>
+    <div style="text-align: center;padding-left: 100px;">
+        <p>สถานีตำรวจภูธรเมืองปราจีนบุรี กองกำกับการ/ตำรวจภูธรจังหวัดปราจัน กองบัญชาการ/ภาค2<p>
+    </div>
+
+  
+    <!-- check error checkbox -->
+    <div *ngIf="this.checked2 && this.checked1 ">
+        <div class="row">
+            <div class="col-12" style="padding-left: 100px;text-align: center;">
+                (กรุณาเลือกอย่างใดอย่างหนึง)
+            </div>
+        </div>
+    </div>
+
+    <!-- button -->
+    <!-- <form [formGroup]="formgroup2" (submit)="SetvalueForms()"></form> -->
+        <div class="form-group" style="padding-top: 40px;">
+            <div class="row">
+
+
+                <div class="col-3" style="text-align: center;">
+                    1 &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    2020-03-11 <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.00 น 
+                </div>
+                <div class="col-3" style="text-align: center;">
+                    ข้าพเจ้า
+                </div>
+                <div class="col-3">
+                    <!-- <input type="text" class="form-control" formControlName="firstName"
+                    [value]="DatatoPrint?.data?.firstName" disabled> -->
+                    {{this.DatatoPrint?.data?.prefix}}
+                    {{this.DatatoPrint?.data?.firstName}}
+
+                </div>
+                <div class="col-3">
+                    <!-- <input type="text" class="form-control" formControlName="lastName"
+                    [value]="DatatoPrint?.data?.lastName" disabled> -->
+                    {{this.DatatoPrint?.data?.lastName}}
+                </div>
+
+
+            </div><br>
+            <div class="row">
+             
+                <div class="col-6" style="text-align: right;">
+                    <!-- <input type="number" class="form-control" formControlName="age" [value]="DatatoPrint?.data?.age"
+                    disabled> -->
+                    อายุ&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                    <!-- {{this.DatatoPrint?.data?.age}} -->12
+                </div>
+               
+                <div class="col-6" style="text-align: center;">
+                    <!-- <input type="text" class="form-control" formControlName="idCardNo"
+                    [value]="DatatoPrint?.data?.idCardNo" disabled> -->
+                    หมายเลขบัตรประชาชน&nbsp; &nbsp; &nbsp; &nbsp;
+                    {{this.DatatoPrint?.data?.idCardNo}}
+                </div>
+               
+            </div><br>
+            <div class="row">
+                <div class="col-2" style="text-align: center; padding-left: 90px;">
+
+                </div>
+                <div class="col-2" style="text-align: center; padding-left: 90px;">
+                    บ้านเลขที่
+                </div>
+                <div class="col-2" style="text-align: right;">
+                    <!-- <input type="text" class="form-control" formControlName="houseNo"
+                        [value]="DatatoPrint?.data?.houseNo" disabled> -->
+                    {{this.DatatoPrint?.data?.houseNo}}
+                </div>
+                <div class="col-2" style="text-align: right; ">
+                    ตรอก/ซอย
+                </div>
+                <div class="col-2" style="text-align: right; ">
+                    <!-- <input type="text" class="form-control" formControlName="alley" [value]="DatatoPrint?.data?.alley"
+                    disabled> -->
+                    {{this.DatatoPrint?.data?.alley}}
+                </div>
+                <div class="col-2">
+
+                </div>
+
+            </div><br>
+            <div class="row">
+                <div class="col-2" style="text-align: center; padding-left: 90px;">
+
+                </div>
+                <div class="col-2" style="text-align: center; padding-left: 90px;">
+                    ถนน
+                </div>
+                <div class="col-2" style="text-align: right;">
+                    <!-- <input type="text" class="form-control" formControlName="road" [value]="DatatoPrint?.data?.road"
+                    disabled> -->
+                    {{this.DatatoPrint?.data?.road}}
+                </div>
+                <div class="col-2" style="text-align: center; padding-left: 90px;">
+                    ตำบล
+                </div>
+                <div class="col-2" style="text-align: right;">
+                    <!-- <input type="text" class="form-control" formControlName="subArea"
+                    [value]="DatatoPrint?.data?.subArea"> -->
+                    {{this.DatatoPrint?.data?.subArea}}
+                </div>
+                <div class="col-2">
+
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-2" style="text-align: center; padding-left: 90px;">
+
+                </div>
+                <div class="col-2" style="text-align: center; padding-left: 90px;">
+                    อำเภอ
+                </div>
+                <div class="col-2" style="text-align: right;">
+                    <!-- <input type="text" class="form-control" formControlName="area" [value]="DatatoPrint?.data?.area"
+                    disabled> -->
+                    {{this.DatatoPrint?.data?.area}}
+                </div>
+                <div class="col-2" style="text-align: center; padding-left: 90px;">
+                    จังหวัด
+                </div>
+                <div class="col-2" style="text-align: right; ">
+                    <!-- <input type="text" class="form-control" formControlName="province"
+                    [value]="DatatoPrint?.data?.province" disabled> -->
+                    {{this.DatatoPrint?.data?.province}}
+                </div>
+                <div class="col-2">
+
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-2" style="text-align: center;padding-left: 100px;">
+
+                </div>
+                <div class="col-2" style="text-align: center;padding-left: 100px;">
+                    โทร
+                </div>
+                <div class="col-2" style="text-align: right;">
+                    <!-- <input type="text" class="form-control" formControlName="mobileNo"
+                    [value]="DatatoPrint?.data?.mobileNo" disabled> -->
+                    {{this.DatatoPrint?.data?.mobileNo}}
+                </div>
+                <div class="col-2" style="text-align: center;">
+
+                </div>
+                <div class="col-2">
+
+                </div>
+            </div><br><br>
+            <div style="text-align: center;padding-left: 230px;">
+                <p>มาสถานีตำรวจเพื่อแจ้งว่า ผู้แจ้งมีความประสงค์ขอรับสมุนไพรจาก วัดสง่างาม ด้วยความสมัครใจ
+                    และไม่เสียค่าใช้จ่ายใดๆทั้งสิ้น โดย<p>
+            </div>
+            <div class="row">
+
+                <!-- <div class="col-6" style="text-align: center;padding-left: 100px;">
+                    ขอรับสมุนไพรด้วยตนเอง<input type="checkbox" class="form-control" [(ngModel)]="checked1">
+                </div>
+                <div class="col-6" style="text-align: center;padding-left: 100px;">
+                    รับสมุนไพรดังกล่าวแทน<input type="checkbox" class="form-control" [(ngModel)]="checked2">
+                </div> -->
+                <div class="col-6" style="text-align: right;">
+                   (&nbsp;&nbsp;&nbsp; ) ขอรับสมุนไพรด้วยตนเอง
+                </div>
+                <div class="col-6" style="text-align: center;">
+                    (<i class="fa fa-check" aria-hidden="true"></i> ) ขอรับสมุนไพรดังกล่าวนแทน
+                 </div>
+        
+            </div><br>
+
+            <!-- รับด้วยตนเอง -->
+            <div *ngIf="this.checked1 && this.checked2 != true">
+                <div class="row">
+                    <div class="col-12" style="padding-left: 230px;">
+                        เมื่อได้รับสมุนไพรดังกล่าวไปใช้แล้ว หากภายหลังปรากฏว่าเกิดผลร้ายใดๆกับผู้ใช้แล้ว
+                        ไม่ติดใจจะดำเนินคดีทั้งทางอาญาและทางแพ่งกับ วัดสง่างาม แต่อย่างใดทั้งสิ้น และขอรับรองว่า
+                        เอกสารใบรับรองแพทย์พร้อมทั้งเอกสาร
+                        หลักฐานเกี่ยวข้องกับผู้ป่วยที่ใช้ประกอบการขอรับสมุนไพรครั้งนี้เป็นเอกสารจริงไม่ได้จัดทำปลอมแปลงขึ้นมา
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-12" style="padding-left: 230px;">
+                        จึงได้แจ้งมาไว้เป็นหลักฐาน
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-12" style="padding-left: 230px;">
+                        เหตุเกิดที่ตำบล บางบริบูรณ์ อำเภอเมื่องปราจีนบุรี จังหวัดปราจีนบุรี
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-12" style="padding-left: 230px;">
+                        ข้าพเจ้าขอรับรองเป็นความจริงทุกประการ
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-12" style="padding-left: 230px;">
+                        ร.ต.ท เขมชาติ ภู่เนติ ตำแหน่ง รอง สว.(สอบสวน)
+                        สภ.เมืองปราจีนบุรีได้รับแจ้งไว้ตามความประสงค์ของผู้แจ้งแล้วจึงบันทึกไว้
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12" style="padding-left: 230px;">
+                        อ่านให้ฟังแล้วรับว่าถูกต้อง
+                    </div>
+                </div><br><br>
+
+            </div>
+
+            <!-- รับด้วยตัวแทน-->
+
+            <div *ngIf="this.checked2 && this.checked1 != true" >
+                <div class="row">
+
+
+                    <div class="col-3" style="text-align: center;">
+                      
+                    </div>
+                    <div class="col-3" style="text-align: center;">
+                        ข้าพเจ้า
+                    </div>
+                    <div class="col-3">
+                        <!-- <input type="text" class="form-control" formControlName="firstName"
+                        [value]="DatatoPrint?.data?.firstName" disabled> -->
+                        {{this.DatatoPrint?.data?.agent[0].prefix}}
+                        {{this.DatatoPrint?.data?.agent[0].firstName}}
+    
+                    </div>
+                    <div class="col-3">
+                        <!-- <input type="text" class="form-control" formControlName="lastName"
+                        [value]="DatatoPrint?.data?.lastName" disabled> -->
+                        {{this.DatatoPrint?.data?.agent[0].lastName}}
+                    </div>
+    
+    
+                </div><br>
+                <div class="row">
+                 
+                    <div class="col-6" style="text-align: right;">
+                        <!-- <input type="number" class="form-control" formControlName="age" [value]="DatatoPrint?.data?.age"
+                        disabled> -->
+                        อายุ&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                        <!-- {{this.DatatoPrint?.data?.age}} -->12
+                    </div>
+                   
+                    <div class="col-6" style="text-align: center;">
+                        <!-- <input type="text" class="form-control" formControlName="idCardNo"
+                        [value]="DatatoPrint?.data?.idCardNo" disabled> -->
+                        หมายเลขบัตรประชาชน&nbsp; &nbsp; &nbsp; &nbsp;
+                        {{this.DatatoPrint?.data?.agent[0].idCardNo}}
+                    </div>
+                   
+                </div><br>
+                <div class="row">
+                    <div class="col-2" style="text-align: center; padding-left: 90px;">
+    
+                    </div>
+                    <div class="col-2" style="text-align: center; padding-left: 90px;">
+                        บ้านเลขที่
+                    </div>
+                    <div class="col-2" style="text-align: right;">
+                        <!-- <input type="text" class="form-control" formControlName="houseNo"
+                            [value]="DatatoPrint?.data?.houseNo" disabled> -->
+                        {{this.DatatoPrint?.data?.agent[0].houseNo}}
+                    </div>
+                    <div class="col-2" style="text-align: right; ">
+                        ตรอก/ซอย
+                    </div>
+                    <div class="col-2" style="text-align: right; ">
+                        <!-- <input type="text" class="form-control" formControlName="alley" [value]="DatatoPrint?.data?.alley"
+                        disabled> -->
+                        {{this.DatatoPrint?.data?.agent[0].alley}}
+                    </div>
+                    <div class="col-2">
+    
+                    </div>
+    
+                </div><br>
+                <div class="row">
+                    <div class="col-2" style="text-align: center; padding-left: 90px;">
+    
+                    </div>
+                    <div class="col-2" style="text-align: center; padding-left: 90px;">
+                        ตำบล
+                    </div>
+                    <div class="col-2" style="text-align: right;">
+                     <!-- <input type="text" class="form-control" formControlName="subArea"
+                        [value]="DatatoPrint?.data?.subArea"> -->
+                        {{this.DatatoPrint?.data?.agent[0].subArea}}
+                    </div>
+                    <div class="col-2" style="text-align: center; padding-left: 90px;">
+                        อำเภอ
+                    </div>
+                    <div class="col-2" style="text-align: right;">
+                         <!-- <input type="text" class="form-control" formControlName="area" [value]="DatatoPrint?.data?.area"
+                        disabled> -->
+                        {{this.DatatoPrint?.data?.agent[0].area}}
+                    </div>
+                    <div class="col-2">
+    
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-2" style="text-align: center; padding-left: 90px;">
+    
+                    </div>
+                    <div class="col-2" style="text-align: center; padding-left: 90px;">
+                        จังหวัด
+                    </div>
+                    <div class="col-2" style="text-align: right;">
+                         <!-- <input type="text" class="form-control" formControlName="province"
+                        [value]="DatatoPrint?.data?.province" disabled> -->
+                        {{this.DatatoPrint?.data?.agent[0].province}}
+                    </div>
+                    <div class="col-2" style="text-align: center; padding-left: 90px;">
+                        โทร
+                    </div>
+                    <div class="col-2" style="text-align: right; ">
+                       <!-- <input type="text" class="form-control" formControlName="mobileNo"
+                        [value]="DatatoPrint?.data?.mobileNo" disabled> -->
+                        {{this.DatatoPrint?.data?.agent[0].mobileNo}}
+                    </div>
+                    <div class="col-2">
+    
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-2" style="text-align: center;padding-left: 100px;">
+                        
+                    </div>
+                    <div class="col-2" style="text-align: center;padding-left: 100px;">
+                        ผู้เกี่ยวข้อง
+                    </div>
+                    <div class="col-2" style="text-align: right;">
+                        {{this.DatatoPrint?.data?.agent[0].connected}}
+                    </div>
+                    <div class="col-2" style="text-align: center;">
+                       
+                    </div>
+                    <div class="col-2">
+    
+                    </div>
+                </div><br>
+               
+                <div class="row">
+                    <div class="col-12" style="padding-left: 230px;">
+                        เมื่อได้รับสมุนไพรดังกล่าวไปใช้แล้ว หากภายหลังปรากฏว่าเกิดผลร้ายใดๆกับผู้ใช้แล้ว
+                        ไม่ติดใจจะดำเนินคดีทั้งทางอาญาและทางแพ่งกับ&nbsp; &nbsp; วัดสง่างาม แต่อย่างใดทั้งสิ้น และขอรับรองว่า
+                        เอกสารใบรับรองแพทย์พร้อมทั้งเอกสาร
+                        หลักฐานเกี่ยวข้องกับผู้ป่วยที่ใช้ประกอบการขอรับสมุนไพรครั้งนี้เป็นเอกสารจริงไม่ได้จัดทำปลอมแปลงขึ้นมา
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-12" style="padding-left: 230px;">
+                        จึงได้แจ้งมาไว้เป็นหลักฐาน
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12" style="padding-left: 230px;">
+                        เหตุเกิดที่ตำบล บางบริบูรณ์ อำเภอเมื่องปราจีนบุรี จังหวัดปราจีนบุรี
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12" style="padding-left: 230px;">
+                        ข้าพเจ้าขอรับรองเป็นความจริงทุกประการ
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12" style="padding-left: 230px;">
+                        ร.ต.ท เขมชาติ ภู่เนติ ตำแหน่ง รอง สว.(สอบสวน)
+                        สภ.เมืองปราจีนบุรีได้รับแจ้งไว้ตามความประสงค์ของผู้แจ้งแล้วจึงบันทึกไว้
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12" style="padding-left: 230px;">
+                        อ่านให้ฟังแล้วรับว่าถูกต้อง
+                    </div>
+                </div>
+                
+
+
+            </div><br><br>
+            <div class="row">
+                <div class="col-12" style="padding-right: 70px;text-align: right; ">
+                    (ลงชื่อ).......................................................................ผู้แจ้ง
+                   
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-12" style="text-align: right;">
+                  
+                    (ลงชื่อ)...................................................................รอง.สว/ผู้รับแจ้ง
+                
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-12" style="padding-right: 70px;text-align: right;">
+            
+                    (ลงชื่อ)...................................................................ผู้บันทึก
+                </div>
+            </div><br>
+
+
+
+
+        </div>
+    <!-- </form> -->
+
+</div>
+
+<!-- <div id="print-section" class="ng-hide">
+    <div style="text-align: center;">
+        <p>สำนักงานตำรวจแห่งชาติ1<p>
+                <p>รายงานประจำวันรับแจ้งเป็นหลักฐาน<p></p>
+                    <p>สถานีตำรวจภูธรเมืองปราจีนบุรี กองกำกับการ/ตำรวจภูธรจังหวัดปราจัน กองบัญชาการ/ภาค2<p>
+    </div><br><br>
+    <div style="text-align: left;">
+
+        <p style="margin-left: 100px;">ข้าพเจ้า {{DatatoPrint?.data?.firstName}}
+            {{DatatoPrint?.data?.lastName}}  {{DatatoPrint?.data?.age}}
+         </p>
+        
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+</div> -->

@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  URL_API:'https://police-cloud.herokuapp.com/',
+  URL_CREATE_DATA_USERS:'users',
 };
 
 /*
