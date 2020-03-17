@@ -10,7 +10,7 @@ import { FormsNoAgentComponent } from './forms-no-agent/forms-no-agent.component
 const routes: Routes = [
  
   {
-    path:'Main',component:MainComponent,
+    path:'',component:MainComponent,
     children: [
    
       {
@@ -19,9 +19,8 @@ const routes: Routes = [
       
     ]
   },
-  {
-    path:'',component:MainComponent,
-  }
+
+
   
 
 
