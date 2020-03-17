@@ -8,18 +8,25 @@ import { FormsNoAgentComponent } from './forms-no-agent/forms-no-agent.component
 
 
 const routes: Routes = [
- 
   {
-    path:'',component:MainComponent,
+     path: '', redirectTo: 'main', pathMatch: 'full' 
+  },
+  {
+    path:'main',component:MainComponent,
     children: [
    
       {
-        path:'',component:FormsManualComponent,
-      }
+        path:'form',component:FormsManualComponent,
+      },
+      {
+        path: '', redirectTo: 'form', pathMatch: 'full' 
+      },
+      
       
     ]
   },
 
+ 
 
   
 

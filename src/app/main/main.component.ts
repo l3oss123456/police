@@ -22,4 +22,8 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  backweb(){
+    window.location.href = "https://www.google.com/"
+  }
+
 }
