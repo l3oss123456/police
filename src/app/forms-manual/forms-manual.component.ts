@@ -1,9 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { environment } from '../../environments/environment'
 import { HttpClient } from '@angular/common/http';
 import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-forms-manual',
@@ -21,8 +22,9 @@ export class FormsManualComponent implements OnInit {
 
   constructor(private formgroup2Builder: FormBuilder, private http: HttpClient) {
     this.FormsGroup2()
+    setInterval(()=>{
 
-    this.http.get<any>('https://97f8456b.ngrok.io/card-data').subscribe(result => {
+      this.http.get<any>('https://97f8456b.ngrok.io/card-data').subscribe(result => {
       //age revrere
       let year = result.birthday.substring(0, 4) - 543
       let daymonth = result.birthday.substring(5, 10)
@@ -32,23 +34,44 @@ export class FormsManualComponent implements OnInit {
       //age revrere
 
       //formvalue
-      this.DataFormIDcard = result;
-      this.formgroup2.patchValue({
-        prefix: result.prefix,
-        firstName: result.firstname,
-        lastName: result.lastname,
-        birthday: this.years,
-        idCardNo: result.idCardNo,
-        houseNo: result.houseNo,
-
-        subArea: result.subArea,
-        area: result.area,
-        province: result.province,
-
-      })
-      console.log(this.DataFormIDcard)
+      if(this.DataFormIDcard){
+        if(this.DataFormIDcard.idCardNo != result.idCardNo){
+          this.DataFormIDcard = result;
+          this.formgroup2.patchValue({
+            prefix: result.prefix,
+            firstName: result.firstname,
+            lastName: result.lastname,
+            birthday: this.years,
+            idCardNo: result.idCardNo,
+            houseNo: result.houseNo,
+            subArea: result.subArea,
+            area: result.area,
+            province: result.province,
+    
+          })
+        }
+      }else{
+        this.DataFormIDcard = result;
+          this.formgroup2.patchValue({
+            prefix: result.prefix,
+            firstName: result.firstname,
+            lastName: result.lastname,
+            birthday: this.years,
+            idCardNo: result.idCardNo,
+            houseNo: result.houseNo,
+            subArea: result.subArea,
+            area: result.area,
+            province: result.province,
+    
+          })
+      }
+     
+     
+      
     })
 
+    },5000)
+    
 
   }
   ngDoCheck(){
@@ -74,27 +97,38 @@ export class FormsManualComponent implements OnInit {
       province: [''],
       mobileNo: [''],
       agent: this.formgroup2Builder.group({
-        prefix: [''],
-        firstName: [''],
-        lastName: [''],
+        prefix: ['',Validators.required],
+        firstName: ['',Validators.required],
+        lastName: ['',Validators.required],
         birthday: [''],
-        idCardNo: [''],
-        houseNo: [''],
+        idCardNo: ['',[Validators.required,Validators.pattern(/^[0-9]{13}$/)]],
+        houseNo: ['',Validators.required],
         alley: [''],
-        subArea: [''],
-        area: [''],
-        province: [''],
+        subArea: ['',Validators.required],
+        area: ['',Validators.required],
+        province: ['',Validators.required],
         mobileNo: [''],
-        connected: [''],
+        connected: ['',Validators.required],
 
       })
     })
   }
 
   SetvalueForms() {
-    console.log(this.formgroup2.value)
-
-
+    
+   
+    if(this.formgroup2.invalid){
+      this.formgroup2.get('agent').get('prefix').markAllAsTouched();
+      this.formgroup2.get('agent').get('firstName').markAllAsTouched();
+      this.formgroup2.get('agent').get('lastName').markAllAsTouched();
+      this.formgroup2.get('agent').get('idCardNo').markAllAsTouched();
+      this.formgroup2.get('agent').get('houseNo').markAllAsTouched();
+      this.formgroup2.get('agent').get('subArea').markAllAsTouched();
+      this.formgroup2.get('agent').get('area').markAllAsTouched();
+      this.formgroup2.get('agent').get('province').markAllAsTouched();
+      this.formgroup2.get('agent').get('connected').markAllAsTouched();
+      return 
+    }
     this.http.post<any>(environment.URL_API + environment.URL_CREATE_DATA_USERS, this.formgroup2.value).toPromise().then(result => {
       console.log(result)
     })
