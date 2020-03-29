@@ -108,18 +108,31 @@ export class FormsManualComponent implements OnInit {
       province: [''],
       mobileNo: [''],
       agent: this.formgroup2Builder.group({
-        prefix: ['',Validators.required],
-        firstName: ['',Validators.required],
-        lastName: ['',Validators.required],
+        prefix: ['',],
+        firstName: ['',],
+        lastName: ['',],
         birthday: [''],
-        idCardNo: ['',[Validators.required,Validators.pattern(/^[0-9]{13}$/)]],
-        houseNo: ['',Validators.required],
+        idCardNo: [''],
+        houseNo: ['',],
         alley: [''],
-        subArea: ['',Validators.required],
-        area: ['',Validators.required],
-        province: ['',Validators.required],
+        subArea: ['',],
+        area: ['',],
+        province: ['',],
         mobileNo: [''],
-        connected: ['',Validators.required],
+        connected: ['',],
+        // prefix: ['',],
+        // firstName: ['',],
+        // lastName: ['',],
+        // birthday: [''],
+        // idCardNo: ['',[,Validators.pattern(/^[0-9]{13}$/)]],
+        // houseNo: ['',],
+        // alley: [''],
+        // subArea: ['',],
+        // area: ['',],
+        // province: ['',],
+        // mobileNo: [''],
+        // connected: ['',],
+
 
       })
     })
@@ -128,18 +141,18 @@ export class FormsManualComponent implements OnInit {
   SetvalueForms() {
     
    
-    if(this.formgroup2.invalid){
-      this.formgroup2.get('agent').get('prefix').markAllAsTouched();
-      this.formgroup2.get('agent').get('firstName').markAllAsTouched();
-      this.formgroup2.get('agent').get('lastName').markAllAsTouched();
-      this.formgroup2.get('agent').get('idCardNo').markAllAsTouched();
-      this.formgroup2.get('agent').get('houseNo').markAllAsTouched();
-      this.formgroup2.get('agent').get('subArea').markAllAsTouched();
-      this.formgroup2.get('agent').get('area').markAllAsTouched();
-      this.formgroup2.get('agent').get('province').markAllAsTouched();
-      this.formgroup2.get('agent').get('connected').markAllAsTouched();
-      return 
-    }
+    // if(this.formgroup2.invalid){
+    //   this.formgroup2.get('agent').get('prefix').markAllAsTouched();
+    //   this.formgroup2.get('agent').get('firstName').markAllAsTouched();
+    //   this.formgroup2.get('agent').get('lastName').markAllAsTouched();
+    //   this.formgroup2.get('agent').get('idCardNo').markAllAsTouched();
+    //   this.formgroup2.get('agent').get('houseNo').markAllAsTouched();
+    //   this.formgroup2.get('agent').get('subArea').markAllAsTouched();
+    //   this.formgroup2.get('agent').get('area').markAllAsTouched();
+    //   this.formgroup2.get('agent').get('province').markAllAsTouched();
+    //   this.formgroup2.get('agent').get('connected').markAllAsTouched();
+    //   return 
+    // }
     this.http.post<any>(environment.URL_API + environment.URL_CREATE_DATA_USERS, this.formgroup2.value).toPromise().then(result => {
       console.log(result)
     })
