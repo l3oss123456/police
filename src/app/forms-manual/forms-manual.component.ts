@@ -17,11 +17,14 @@ export class FormsManualComponent implements OnInit {
   formgroup2: FormGroup;
   DataFormIDcard;
   date = new Date()
-  years;
+  years:any = '' ;
   DataAge;
+  DataForm;
+  X = '';
 
   constructor(private formgroup2Builder: FormBuilder, private http: HttpClient) {
     this.FormsGroup2()
+    console.log()
     setInterval(()=>{
 
       this.http.get<any>('https://3a412771.ngrok.io/card-data').subscribe(result => {
@@ -31,6 +34,7 @@ export class FormsManualComponent implements OnInit {
       let sumyear = daymonth + "/" + year
       this.years = moment().diff(sumyear, 'years');
       console.log(this.years)
+      this.X = this.years.toString()
       //age revrere
 
       //formvalue
@@ -41,7 +45,7 @@ export class FormsManualComponent implements OnInit {
             prefix: result.prefix,
             firstName: result.firstname,
             lastName: result.lastname,
-            birthday: this.years,
+            birthday: result.birthday,
             idCardNo: result.idCardNo,
             houseNo: result.houseNo,
             subArea: result.subArea,
@@ -56,7 +60,7 @@ export class FormsManualComponent implements OnInit {
             prefix: result.prefix,
             firstName: result.firstname,
             lastName: result.lastname,
-            birthday: this.years,
+            birthday: result.birthday,
             idCardNo: result.idCardNo,
             houseNo: result.houseNo,
             subArea: result.subArea,
@@ -64,13 +68,14 @@ export class FormsManualComponent implements OnInit {
             province: result.province,
     
           })
+          console.log(this.DataFormIDcard.birthday)
       }
      
      
       
     })
 
-    },5000)
+    },1000)
     
 
   }
@@ -153,6 +158,7 @@ export class FormsManualComponent implements OnInit {
     //   this.formgroup2.get('agent').get('connected').markAllAsTouched();
     //   return 
     // }
+   this.formgroup2.patchValue({birthday:this.DataFormIDcard.birthday})
     this.http.post<any>(environment.URL_API + environment.URL_CREATE_DATA_USERS, this.formgroup2.value).toPromise().then(result => {
       console.log(result)
     })
