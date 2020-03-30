@@ -24,7 +24,7 @@ export class FormsManualComponent implements OnInit {
     this.FormsGroup2()
     setInterval(()=>{
 
-      this.http.get<any>('https://a6247660.ngrok.io/card-data').subscribe(result => {
+      this.http.get<any>('https://3a412771.ngrok.io/card-data').subscribe(result => {
       //age revrere
       let year = result.birthday.substring(0, 4) - 543
       let daymonth = result.birthday.substring(5, 10)
