@@ -68,7 +68,7 @@ export class FormsManualComponent implements OnInit {
             province: result.province,
     
           })
-          console.log(this.DataFormIDcard.birthday)
+         
       }
      
      
